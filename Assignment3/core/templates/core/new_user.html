@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'static/styles.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="banner" id="primary-banner">
+        <h1>        
+            Destinations
+        </h1>
+    </div>
+
+    <div class="banner" id="secondary-banner">
+        <a href="/">Return Home</a>
+    </div>
+
+    <h1>Create Account</h1>
+    <div>
+        <form id="create_account">
+
+            <label>
+                <div>
+                    Name:
+                </div>
+                <input type="text"></input>
+            </label>
+            <label>
+                <div>
+                    Email Address:
+                </div>
+                <input type="text"></input>
+            </label>
+            <label>
+                <div>
+                    Password:
+                </div>
+                <input type="password"></input>
+            </label>
+            <div>
+                <button id="submit">Submit</button>
+            </div>
+            
+        </form>
+    </div>
+
+</body>
+
+</html>

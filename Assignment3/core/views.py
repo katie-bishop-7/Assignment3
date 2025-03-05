@@ -4,7 +4,7 @@ def index(request):
     return render(request, "core/index.html")
 
 def new_user(request):
-    return render(request, "core/index.html")
+    return render(request, "core/new_user.html")
 
 def new_session(request):
     return render(request, "core/index.html")

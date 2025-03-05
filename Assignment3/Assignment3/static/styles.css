@@ -1,5 +1,70 @@
+
+:root {
+    --background_color: rgb(255, 255, 255);
+    --grad_color: linear-gradient(rgb(116, 193, 225),rgb(210, 150, 143));
+    --primary_color: rgb(85, 96, 197);
+    --dark_color: rgb(10, 18, 91);
+    --secondary_color: rgb(116, 193, 225);
+    --accent_color: rgb(210, 143, 143);
+}
+
+
 body {
-    background-color: beige;
-    margin: 10 px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: var(--background_color);
+    margin: 0px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.banner {
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#primary-banner {
+    background-color: var(--primary_color);
+    text-align: left;
+    padding-left: 1.75em;
+}
+
+#secondary-banner {
+    background-color: var(--secondary_color);
+    text-align: right;
+}
+
+#banner-box {
+    width: 20%;
+    align-items: right;
+}
+
+#banner-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.inv-link {
+    text-decoration: none;
+    color: var(--dark_color);
+}
+
+form {
+    display: block;
+    flex-direction: column;
+    justify-content: space-around;
+    border-width: 2px;
+    background-color: var(--secondary_color);
+    padding: 15px;
+    width: 25%;
+    border-top-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    border-color: var(--primary_color);
+    margin-left: 25%;
+    margin-top: 10%
+}
+
+label {
+    width: 70%;
+}
+
+button {
+    width: auto;
 }
