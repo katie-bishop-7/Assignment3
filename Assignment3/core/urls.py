@@ -9,6 +9,7 @@ urlpatterns = [
     path("sessions/", views.sessions, name="sessions"),
     path("sessions/destroy/", views.destroy_session, name="destroy_session"),
     path("destinations/", views.destinations, name="destinations"),
+    path("destinations/new/", views.new_destination, name="new_destinations"),
     path("destinations/<int:id>/", views.destroy_session, name="destinations_id"),
     path("destinations/<int:id>/destroy/", views.destroy_destination_id, name="destroy_destination_id"),
 

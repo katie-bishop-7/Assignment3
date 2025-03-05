@@ -17,30 +17,35 @@
     </div>
 
     <div class="banner" id="secondary-banner">
-        <a href="/" class="inv-link">Return Home</a>
+        <div id="banner-box">
+            <div id="banner-buttons">
+                <a href="../../" class="inv-link">Home</a>
+                <a href="../../" class="inv-link">My Destinations</a> <!-- TODO: Implement-->
+            </div>
+        </div>
     </div>
 
-    <h1>Create Account</h1>
+    <h1>Add New Destination</h1>
     <div>
-        <form id="create_account" action="/users/" method="post">
+        <form id="new-destination" action="/destinations/" method="post">
 
             <label>
                 <div>
-                    Name:
+                    Place:
                 </div>
-                <input type="text" name="name"></input>
+                <input type="text" name="place"></input>
             </label>
             <label>
                 <div>
-                    Email Address:
+                    Rating (1-5):
                 </div>
-                <input type="text" name="email"></input>
+                <input type="number" name="rating"></input>
             </label>
             <label>
                 <div>
-                    Password:
+                    Review:
                 </div>
-                <input type="password" name="password"></input>
+                <input type="text" name="review" class="big-text-box"></input>
             </label>
             <div>
                 <button id="submit">Submit</button>
