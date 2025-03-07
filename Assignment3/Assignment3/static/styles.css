@@ -24,6 +24,7 @@ body {
     background-color: var(--primary_color);
     text-align: left;
     padding-left: 1.75em;
+    border-bottom: 2px var(--primary_color);
 }
 
 #secondary-banner {
@@ -67,9 +68,42 @@ form {
     height: 2em;
 }
 
+div > div {
+    margin: 8px;
+}
+
+#review {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    border-style: solid;
+    border-color: var(--primary_color);
+    border-radius: 10px;
+    border-width: 2px;
+    background-color: var(--secondary_color);
+    width: 85%;
+    margin-left: 7.5%;
+}
+
+.destination-info {
+    margin: 0px;
+    text-align: left;
+}
+
 input {
     width: 250px;
     height: 25px;
+}
+
+input.big-text-box {
+    width: 250px;
+    height: 100px;
+}
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
 }
 
 label {

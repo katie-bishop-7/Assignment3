@@ -17,3 +17,4 @@ class Destination(models.Model):
     place = models.CharField(max_length=100)
     review = models.CharField(max_length=5000)
     rating = models.SmallIntegerField()
+    share_publicly = models.BooleanField(default=False)

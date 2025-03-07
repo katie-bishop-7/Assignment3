@@ -11,7 +11,7 @@
 
 <body>
     <div class="banner" id="primary-banner">
-        <h1>        
+        <h1>
             Destinations
         </h1>
     </div>
@@ -31,14 +31,18 @@
     <div>
         {% if destinations %}
         {% for destination in destinations%}
-        <div>
-            {{ destination.place }}
-        </div>
-        <div>
-            {{ destination.rating }}
-        </div>
-        <div>
-            {{ destination.review }}
+        <div id="review">
+            <div class="destination-info">
+                <h2>
+                    {{ destination.place }}
+                </h2>
+            </div>
+            <div class="destination-info">
+                Rating: {{ destination.rating }}/5
+            </div>
+            <div class="destination-info">
+                Review: {{ destination.review }}
+            </div>
         </div>
         {% endfor %}
         {% else %}
