@@ -41,6 +41,9 @@
             <div class="destination-info">
                 Review: {{ destination.review }}
             </div>
+            <div class="destination-info">
+                Posted by {{ destination.user.name }}
+            </div>
         </div>
         {% endfor %}
         {% else %}

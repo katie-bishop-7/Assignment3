@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'static/styles.css' %}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="banner" id="primary-banner">
+        <h1>
+            Destinations
+        </h1>
+    </div>
+
+    <div class="banner" id="secondary-banner">
+        <div id="banner-box">
+            <div id="banner-buttons">
+                <a href="/destinations/" class="inv-link">Back</a>
+                <a href="/sessions/destroy/" class="inv-link">Log Out</a>
+            </div>
+        </div>
+    </div>
+
+    <h1>Edit Destination</h1>
+
+    <div>
+        <form id="edit-destination" action="/destinations/{{ destination.id }}/" method="post">
+
+            <label>
+                <div>
+                    Place:
+                </div>
+                <input type="text" name="place" value="{{ destination.place }}"></input>
+            </label>
+            <label>
+                <div>
+                    Rating (1-5):
+                </div>
+                <input type="number" name="rating" value="{{ destination.rating }}"></input>
+            </label>
+            <label>
+                <div>
+                    Review:
+                </div>
+                <input type="text" name="review" class="big-text-box" value="{{ destination.review }}"></input>
+            </label>
+
+            <label>
+                <div>
+                    Display publicly?
+                    {% if destination.share_publicly %}
+                    <input type="checkbox" name="share-publicly" checked></input>
+                    {% else %}
+                    <input type="checkbox" name="share-publicly" ></input>
+                    {% endif %}
+                </div>
+            </label>
+            <div>
+                <button id="submit">Submit Changes</button>
+            </div>
+        </form>
+        <div>
+            <form action="/destinations/{{ destination.id }}/destroy/" method="post">
+                <button id="submit">Delete</button>
+            </form>
+        </div>
+       
+    </div>
+
+</body>
+
+</html>
+
+<!-- Copilot assisted -->

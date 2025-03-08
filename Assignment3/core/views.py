@@ -16,7 +16,7 @@ def index(request):
         all_destinations = Destination.objects.filter(share_publicly=True)
         top_5_destinations = []
 
-        for i in range(len(all_destinations)):
+        for i in range(len(all_destinations)-1, 0, -1):
             if len(top_5_destinations) < 5:
                 top_5_destinations.append(all_destinations[i])
             
@@ -43,7 +43,7 @@ def user(request : HttpRequest):
             return HttpResponse("Invalid email address")
         if len(password) < 8:
             return HttpResponse("Password must be at least 8 characters")
-        if not any(char.isdigit for char in password):
+        if not any(char.isdigit() for char in password):
             return HttpResponse("Password must contain at least one number")
         if email in [user.email for user in User.objects.all()]:
             return HttpResponse("Email already taken")
@@ -147,8 +147,43 @@ def destinations(request : HttpRequest):
 def new_destination(request):
     return render(request, "core/new_destination.html")
 
-def destination_id(request):
-    return render(request, "core/index.html")
+def destination_id(request : HttpRequest, id : int):
+    if request.method == "GET":
+        token = request.COOKIES.get("token")
+        session = Session.objects.filter(session_token=token).first()
+        if not session:
+            return redirect("/")
+        user = session.user
 
-def destroy_destination_id(request):
-    return render(request, "core/index.html")
+        if request.method == "GET":
+            if user:
+                destination = Destination.objects.filter(user=user, id=id).first()
+                if destination:
+                    return render(request, "core/view_destination.html", {"destination" : destination})
+                else:
+                    return HttpResponse("404: Not found")
+            else:
+                return redirect("/sessions/new/")
+
+
+        destination = Destination.objects.filter(id=id).first()
+    if request.method == "POST":
+        params = request.POST
+        destination = Destination.objects.filter(id=id).first()
+        destination.place = params.get("place")
+        destination.review = params.get("review")
+        destination.rating = params.get("rating")
+        if params.get("share-publicly"):
+            destination.share_publicly = True
+        else:
+            destination.share_publicly = False
+        destination.save()
+        return redirect('/destinations/')
+
+def destroy_destination_id(request : HttpRequest, id : int):
+    if request.method == "POST":
+        destination = Destination.objects.filter(id=id).first()
+        destination.delete()
+    return redirect('/destinations/')
+
+# Copilot assisted

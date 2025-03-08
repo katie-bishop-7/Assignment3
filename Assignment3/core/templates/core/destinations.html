@@ -42,6 +42,9 @@
             <div class="destination-info">
                 Review: {{ destination.review }}
             </div>
+            <div class="destination-info">
+                <a href="/destinations/{{ destination.id }}">Edit</a>
+            </div>
         </div>
         {% endfor %}
         {% else %}
@@ -52,3 +55,5 @@
 </body>
 
 </html>
+
+<!-- Copilot assisted -->
