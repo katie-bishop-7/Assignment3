@@ -1,115 +1,194 @@
-
 :root {
-    --background_color: rgb(255, 255, 255);
-    --grad_color: linear-gradient(rgb(116, 193, 225),rgb(210, 150, 143));
-    --primary_color: rgb(85, 96, 197);
-    --dark_color: rgb(10, 18, 91);
-    --secondary_color: rgb(116, 193, 225);
-    --accent_color: rgb(210, 143, 143);
+    --background_color: #f4f7fc;
+    --primary_color: #505d81; /* Dark blue */
+    --secondary_color: #7d91be; /* Bright blue */
+    --accent_color: #ebebeb; /* Light blue */
+    --text_color: #1e293b; /* Dark gray-blue */
+    --light_text_color: #f8fafc; /* Light text for contrast */
+    --border_color: #cbd5e1; /* Light gray for borders */
+    --border_radius: 10px;
+    --transition_speed: 0.3s;
+    --box_shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 body {
     background-color: var(--background_color);
-    margin: auto;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    font-family: 'Inter', 'Segoe UI', Roboto, 'Open Sans', sans-serif;
+    color: var(--text_color);
     text-align: center;
 }
 
-.banner {
-    padding: 10px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+h1, h2 {
+    padding: 0px;
+    margin: 0px;
 }
+
+h3 {
+    font-size: 1em;
+    font-style: italic;
+    color: var(--accent_color);
+}
+
+header {
+    background-color: var(--primary_color);
+    color: var(--light_text_color);
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    box-shadow: var(--box_shadow);
+}
+
+.banner {
+    padding: 20px;
+    background: var(--secondary_color);
+    color: var(--light_text_color);
+    text-align: center;
+    font-size: 1.2em;
+    border-radius: var(--border_radius);
+    margin: 20px auto;
+    max-width: 90%;
+    box-shadow: var(--box_shadow);
+}
+
 #primary-banner {
     background-color: var(--primary_color);
+    padding: 1.5em;
+    color: var(--light_text_color);
+    border-bottom: 4px solid var(--accent_color);
     text-align: left;
-    padding-left: 1.75em;
-    border-bottom: 2px var(--primary_color);
 }
 
 #secondary-banner {
     background-color: var(--secondary_color);
+    padding: 1.5em;
+    color: var(--light_text_color);
     text-align: right;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #banner-box {
-    width: 20%;
-    align-items: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #banner-buttons {
     display: flex;
-    justify-content: space-around;
+    gap: 15px;
 }
 
-.inv-link {
-    text-decoration: none;
-    color: var(--dark_color);
+#banner-buttons button {
+    background-color: var(--accent_color);
+    color: var(--light_text_color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border_radius);
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color var(--transition_speed), transform var(--transition_speed);
+    box-shadow: var(--box_shadow);
 }
+
+#banner-buttons button:hover {
+    background-color: var(--secondary_color);
+    transform: translateY(-2px);
+}
+
+a.inv-link {
+    text-decoration: none;
+    color: var(--accent_color);
+    font-weight: bold;
+    transition: color var(--transition_speed);
+}
+
 
 form {
-    font-size: 1.2em;
-    display: block;
+    background-color: var(--light_text_color);
+    border: 1px solid var(--border_color);
+    border-radius: var(--border_radius);
+    padding: 25px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: var(--box_shadow);
+    display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    border-width: 2px;
+    gap: 20px;
+}
+
+form label {
+    font-weight: bold;
+    text-align: left;
+    color: var(--text_color);
+}
+
+form input, form textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid var(--border_color);
+    border-radius: var(--border_radius);
+    font-size: 1em;
+    color: var(--text_color);
+    background-color: #ffffff;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--accent_color);
+    box-shadow: 0 0 5px var(--accent_color);
+}
+
+form button {
+    background-color: var(--primary_color);
+    color: var(--light_text_color);
+    border: none;
+    padding: 12px 20px;
+    border-radius: var(--border_radius);
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color var(--transition_speed), transform var(--transition_speed);
+}
+
+form button:hover {
     background-color: var(--secondary_color);
-    padding: 15px;
-    width: 70%;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-color: var(--primary_color);
-    margin-left: 15%;
-
-}
-
-#big-text-box {
-    width: 2em;
-    height: 2em;
-}
-
-div > div {
-    margin: 8px;
+    transform: translateY(-2px);
 }
 
 #review {
+    background-color: var(--light_text_color);
+    border: 1px solid var(--border_color);
+    border-radius: var(--border_radius);
+    padding: 20px;
+    max-width: 700px;
+    margin: 20px auto;
+    box-shadow: var(--box_shadow);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    border-style: solid;
-    border-color: var(--primary_color);
-    border-radius: 10px;
-    border-width: 2px;
-    background-color: var(--secondary_color);
-    width: 85%;
-    margin-left: 7.5%;
+    gap: 15px;
 }
 
 .destination-info {
-    margin: 0px;
+    font-weight: bold;
     text-align: left;
+    color: var(--text_color);
 }
 
-input {
-    width: 250px;
-    height: 25px;
-}
+@media (max-width: 768px) {
+    #banner-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
 
-input.big-text-box {
-    width: 250px;
-    height: 100px;
-}
+    #banner-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
 
-input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-}
-
-label {
-    width: 70%;
-}
-
-button {
-    width: auto;
+    form, #review {
+        width: 95%;
+    }
 }

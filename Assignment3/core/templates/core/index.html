@@ -12,21 +12,22 @@
 <body>
     <div class="banner" id="primary-banner">
         <h1>
-            Destinations
+            Destinations:
         </h1>
+        <h3>
+            Find your new favorite place
+        </h3>
     </div>
 
     <div class="banner" id="secondary-banner">
-        <div id="banner-box">
-            <div id="banner-buttons">
-                <a href="sessions/new/" class="inv-link">Sign In</a>
-                <a href="users/new/" class="inv-link">Create Account</a>
-            </div>
+        <div id="banner-buttons">
+            <a href="sessions/new/" class="inv-link">Sign In</a>
+            <a href="users/new/" class="inv-link">Create Account</a>
         </div>
     </div>
 
-    <h1>Welcome! Find your new destination here!</h1>
     <div>
+        <h1>Public Reviews</h1>
         {% if destinations %}
         {% for destination in destinations%}
         <div id="review">
@@ -47,7 +48,8 @@
         </div>
         {% endfor %}
         {% else %}
-        No destinations yet
+        <div style="margin: 120px 0px 0px 0px"> No destinations yet</div>
+       
         {% endif %}
     </div>
 </body>

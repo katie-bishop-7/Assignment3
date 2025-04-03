@@ -12,16 +12,17 @@
 <body>
     <div class="banner" id="primary-banner">
         <h1>
-            Destinations
+            Destinations:
         </h1>
+        <h3>
+            Find your new favorite place
+        </h3>
     </div>
 
     <div class="banner" id="secondary-banner">
-        <div id="banner-box">
-            <div id="banner-buttons">
-                <a href="/destinations/" class="inv-link">Back</a>
-                <a href="/sessions/destroy/" class="inv-link">Log Out</a>
-            </div>
+        <div id="banner-buttons">
+            <a href="/destinations/" class="inv-link">Back</a>
+            <a href="/sessions/destroy/" class="inv-link">Log Out</a>
         </div>
     </div>
 
@@ -55,7 +56,7 @@
                     {% if destination.share_publicly %}
                     <input type="checkbox" name="share-publicly" checked></input>
                     {% else %}
-                    <input type="checkbox" name="share-publicly" ></input>
+                    <input type="checkbox" name="share-publicly"></input>
                     {% endif %}
                 </div>
             </label>
@@ -68,7 +69,7 @@
                 <button id="submit">Delete</button>
             </form>
         </div>
-       
+
     </div>
 
 </body>
